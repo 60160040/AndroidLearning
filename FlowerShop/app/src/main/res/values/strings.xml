@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Flower Shop</string>
+    <string name="shop_title">Dog Shop</string>
+    <string name="dog_description_01">สายไฟพันปั๊ก</string>
+    <string name="dog_description_02">หมางง</string>
+    <string name="dog_description_03">หมาน้อย</string>
+    <string name="order_pug">หมาปั๊ก</string>
+    <string name="order_Confused_dog">You order Confused dog</string>
+    <string name="order_little_dog">You ordered little dog</string>
+    <string name="no_selected">No item selected</string>
+    <string name="order_key">com.zonew.flowershop.ORDER</string>
+</resources>

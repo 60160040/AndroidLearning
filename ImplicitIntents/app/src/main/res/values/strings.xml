@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Implicit Intents</string>
+    <string name="hint_url_input">Enter URL</string>
+    <string name="open_web">Open web</string>
+    <string name="hint_location_input">Enter location</string>
+    <string name="open_location">open location</string>
+    <string name="massage_input">Enter Massage</string>
+    <string name="share">share</string>
+</resources>
