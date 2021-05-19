@@ -1,0 +1,2 @@
+rootProject.name='Word List'
+include ':app'
