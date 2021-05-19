@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">FiveButton</string>
+    <string name="android_lesson">Android Lesson</string>
+    <string name="lesson_one">Count</string>
+    <string name="lesson_two">Scroll Text</string>
+    <string name="lesson_three">Two Activity</string>
+    <string name="lesson_four">ImplicitIntents</string>
+    <string name="lesson_five">Easy Calculate</string>
+
+    //Scroll Text
+    <string name="article_title">Harmonica Influencers</string>
+    <string name="article_subtitle">Song 3: Sonny Terry with Woody Guthrie, “Goin’ Down This Road Feelin’ Bad”</string>
+    <string name="article_text">\t I’ve played this song hundreds of times — with every band I’ve played in or with. Woody Guthrie recorded it with Sonny Terry (Saunders Teddell) on harmonica in 1940.
+        Known also as “<b>Lonesome Road Blues</b>”, ”<i>Down In The Jail On My Knees</i>”, “Blowin’ Down This Road”, and “I Ain’t Gonna Be Treated This Way” among other titles,
+        this song is probably best known for its cover by the Grateful Dead, although Garcia was known to favor a version by Delaney and Bonnie.
+        \n\n
+        www.google.com
+        \n\n
+        \t For me, Woody’s is the original version, and Sonny Terry is the source of my harmonica style. You can hear Sonny whooping and hollering while playing harmonica, without stopping to take a breath.
+        Sonny could make a harmonica walk and talk at the same time. He was a musical legend, a Piedmont blues musician, long-standing partner with Brownie McGhee,
+        and a frequent collaborator with Woody. He was invited to play at Carnegie Hall for the first “From Spirituals to Swing” concert in 1938.
+        Producer John Hammond supposedly went looking for Robert Johnson in the Deep South, found out he had been murdered, and discovered blind Sonny working the juke joints.
+        Among many strange career highlights, Sonny appeared in the movie The Color Purple.
+        \n\n
+        \t I’ve played this song hundreds of times — with every band I’ve played in or with. Woody Guthrie recorded it with Sonny Terry (Saunders Teddell) on harmonica in 1940.
+        Known also as “<b>Lonesome Road Blues</b>”, ”<i>Down In The Jail On My Knees</i>”, “Blowin’ Down This Road”, and “I Ain’t Gonna Be Treated This Way” among other titles,
+        this song is probably best known for its cover by the Grateful Dead, although Garcia was known to favor a version by Delaney and Bonnie.
+        \n\n
+        \t For me, Woody’s is the original version, and Sonny Terry is the source of my harmonica style. You can hear Sonny whooping and hollering while playing harmonica, without stopping to take a breath.
+        Sonny could make a harmonica walk and talk at the same time. He was a musical legend, a Piedmont blues musician, long-standing partner with Brownie McGhee,
+        and a frequent collaborator with Woody. He was invited to play at Carnegie Hall for the first “From Spirituals to Swing” concert in 1938.
+        Producer John Hammond supposedly went looking for Robert Johnson in the Deep South, found out he had been murdered, and discovered blind Sonny working the juke joints.
+        Among many strange career highlights, Sonny appeared in the movie The Color Purple.</string>
+
+    //Implicit Intents
+    <string name="open_web">Open Web</string>
+    <string name="hint_enter_web">Enter web URL</string>
+    <string name="hint_enter_location">Enter location</string>
+    <string name="open_map">Open map</string>
+    <string name="hint_enter_message">Enter message</string>
+    <string name="share">Share</string>
+
+    //Easy Calculate
+    <string name="enter_num_1">Enter number 1</string>
+    <string name="enter_num_2">Enter number 2</string>
+    <string name="calculate">Calculate</string>
+    <string name="add">Add +</string>
+    <string name="sub">Sub -</string>
+    <string name="multiply">Multiply *</string>
+    <string name="divide">Divide /</string>
+</resources>

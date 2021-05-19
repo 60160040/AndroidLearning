@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CountActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mar40dp"
+        android:layout_marginLeft="@dimen/mar40dp"
+        android:layout_marginTop="@dimen/mar40dp"
+        android:layout_marginEnd="@dimen/mar40dp"
+        android:layout_marginRight="@dimen/mar40dp"
+        android:onClick="shwMessage"
+        android:text="toast"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/idTvShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="180sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvShow"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="@dimen/mar40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="countUp"
+        android:text="countUp"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvShow"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="@dimen/mar40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toRightOf="@id/button2"
+        android:onClick="countDown"
+        android:text="countDown"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button3"
+        android:layout_marginStart="@dimen/mar40dp"
+        android:layout_marginLeft="@dimen/mar40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/mar40dp"
+        android:layout_marginRight="@dimen/mar40dp"
+        android:layout_marginBottom="@dimen/mar40dp"
+        android:onClick="reset"
+        android:text="Reset"
+        android:textSize="36sp" />
+
+</RelativeLayout>

@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent i =  getIntent();            // รับข้อมูลมาจะที่อื่น
         Uri uri = i.getData();              // นำ data ใส่ [uri]
-        if(uri != null){                    // ถ้า [uri] มีข้อมูล *กรณ๊เปิดแอปเองจะไม่มีข้อมูลต้องรับ Intent มา
+        if(uri != null){                    // ถ้า [uri] มีข้อมูล *กรณีเปิดแอปเองจะไม่มีข้อมูลต้องรับ Intent มา
             String str = uri.toString();    // นำข้อความ [uri] ใส่ [str]
             tvContent.setText(str);         // set ข้อความแสดงผล
 
