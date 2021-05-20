@@ -11,22 +11,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HighScoreActivity extends AppCompatActivity {
-    SavedData sd;
-    EditText etName;
-    Button btSave;
-    TextView tvName;
-    TextView tvScore;
-    Button btNewGame;
-    Button btReset;
-    int score;
-    int count;
+    SavedData sd        ;
+    EditText  etName    ; // new high score
+    Button    btSave    ;
+    TextView  tvName    ; // name high score
+    TextView  tvScore   ; // score
+    Button    btNewGame ;
+    Button    btReset   ; // reset high score
+    int       score     ; // high score
+    int       count     ; // new high score
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_high_score);
 
-        sd = new SavedData(this);
+        // เชื่อม ต[ัวแปร]
         tvName  = findViewById(R.id.idTvName);
         tvScore = findViewById(R.id.idTvScore);
         etName  = findViewById(R.id.idEtName);
@@ -39,16 +39,19 @@ public class HighScoreActivity extends AppCompatActivity {
     }
 
     public void showScore(){
-        String strName;
-        strName = sd.readHighScore().name;
-        score   = sd.readHighScore().score;
+        sd = new SavedData(this);
+        // get from database
+        String strName = sd.readHighScore().name ;
+        score          = sd.readHighScore().score;
 
+        // set Text
         tvName.setText(strName);
         String strScore = Integer.toString(score);
         tvScore.setText(strScore);
     }
 
     public void checkStart(){
+        // get score from MainActivity
         Intent i = getIntent();
         count = i.getIntExtra("COUNT",999);
 

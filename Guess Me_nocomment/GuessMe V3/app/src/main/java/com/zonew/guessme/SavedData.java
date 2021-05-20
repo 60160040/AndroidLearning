@@ -45,6 +45,4 @@ public class SavedData {
 
         return hs;
     }
-    //
-
 }

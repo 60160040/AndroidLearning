@@ -27,7 +27,6 @@ public class HighScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_high_score);
 
         // link variable
-        sd = new SavedData(this);
         tvName  = findViewById(R.id.idTvName);
         tvScore = findViewById(R.id.idTvScore);
         etName  = findViewById(R.id.idEtName);
@@ -36,6 +35,7 @@ public class HighScoreActivity extends AppCompatActivity {
         btExit  = findViewById(R.id.idBtExit);
 
         // get score from data
+        sd = new SavedData(this);
         strName = sd.readName();
         score   = sd.readScore();
 

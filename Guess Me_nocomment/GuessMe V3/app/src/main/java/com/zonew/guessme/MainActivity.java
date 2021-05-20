@@ -13,23 +13,24 @@ import org.w3c.dom.Text;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tvCount;
-    TextView tvAns;
-    EditText etGuessNum;
-    TextView tvMsg;
-    GameGuessme game;
+    TextView    tvCount    ; // จำนวนครั้งที่กดเดา
+    TextView    tvAns      ; // เฉลย
+    EditText    etGuessNum ; // เลขที่เดา
+    TextView    tvMsg      ; // ผลลัพท์
+    GameGuessme game       ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // เชื่อม [ตัวแปร]
         tvAns = findViewById(R.id.idTvAns);
         etGuessNum = findViewById(R.id.idEtGuessNum);
         tvMsg = findViewById(R.id.idTvMsg);
         tvCount = findViewById(R.id.idTvCount);
         tvMsg.setText("-----------------");
 
-
+        // set Text (Ans, Count)
         game = new GameGuessme();
         String strCompNum = "Ans: "  + game.getCompNum();
         String strCount   = "Count: " + game.getScore();
@@ -38,11 +39,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkNum(View v){
+        // set เลขที่ทาย
         String str = etGuessNum.getText().toString();
         int guessNum = Integer.parseInt(str);
         game.setGuessNum(guessNum);
 
-        //set count
+        // count++
         game.updateCount();
         String strCount   = "Count: " + game.getScore();
         tvCount.setText(strCount);

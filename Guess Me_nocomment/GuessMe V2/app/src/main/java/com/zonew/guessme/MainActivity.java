@@ -13,10 +13,10 @@ import org.w3c.dom.Text;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    TextView tvAns;
-    EditText etGuessNum;
-    TextView tvMsg;
-    GameGuessme game;
+    TextView tvAns      ; // เฉลย
+    EditText etGuessNum ; // เลขที่ทาย
+    TextView tvMsg      ; // ผลลัพท์
+    GameGuessme game    ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         tvAns = findViewById(R.id.idTvAns);
         etGuessNum = findViewById(R.id.idEtGuessNum);
         tvMsg = findViewById(R.id.idTvMsg);
-        tvMsg.setText("");
+        tvMsg.setText("Enter number");
 
         game = new GameGuessme();
 
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkNum(View v){
+        // set เลขที่ทาย
         String str = etGuessNum.getText().toString();
         int guessNum = Integer.parseInt(str);
         game.setGuessNum(guessNum);

@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         tvResultMsg = findViewById(R.id.idTvResultMsg);
         tvResultMsg.setText("Enter number");
 
+        // start
         count = 0  ;
         comThink() ;
-
 
     }
 

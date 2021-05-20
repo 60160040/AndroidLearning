@@ -6,14 +6,15 @@ import android.util.Log;
 import android.widget.Toast;
 
 public class SavedData {
-    SharedPreferences sp;
+    SharedPreferences sp; // เก็บข้อมูล
 
+    // constructor
     public SavedData(Context c){
         sp = c.getSharedPreferences("com.zonew.guessme.saved_data",Context.MODE_PRIVATE);
     }
 
     public void writeHighRecord(String name,int count){
-        SharedPreferences.Editor e = sp.edit();
+        SharedPreferences.Editor e = sp.edit(); // open editor
         e.putString("HIGHSCORE_NAME",name);
         e.putInt("HIGHSCORE_COUNT",count);
         e.commit();
@@ -30,6 +31,4 @@ public class SavedData {
         score = sp.getInt("HIGHSCORE_COUNT",999);
         return score;
     }
-
-
 }
