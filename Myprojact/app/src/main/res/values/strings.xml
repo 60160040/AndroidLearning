@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">My Project After Update</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">member</string>
+    <string name="title_notifications">Profile</string>
+    <string name="sign_out">SIGN OUT</string>
+
+    <string name="logo">LOGO</string>
+    <string name="prompt_username">username</string>
+    <string name="prompt_password">password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="register">REGISTER</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_profile_name">ร้านเจ๊จุก</string>
+    <string name="title_profile_number">08123456789</string>
+    <string name="history">บันทึกกิจกรรม</string>
+    <string name="contentDescription_profileIcon">profile_icon</string>
+</resources>

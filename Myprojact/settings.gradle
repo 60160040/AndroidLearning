@@ -1,0 +1,2 @@
+rootProject.name = "My Projact Affter Update"
+include ':app'
