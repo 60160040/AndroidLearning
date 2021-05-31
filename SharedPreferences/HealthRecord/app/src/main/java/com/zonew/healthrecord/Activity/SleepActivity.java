@@ -1,10 +1,12 @@
-package com.zonew.healthrecord;
+package com.zonew.healthrecord.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.zonew.healthrecord.R;
 
 public class SleepActivity extends AppCompatActivity {
 
@@ -16,12 +18,12 @@ public class SleepActivity extends AppCompatActivity {
 
 
     public void pageAdd(View v){
-        Intent i = new Intent(this,AddSleepActivity.class);
+        Intent i = new Intent(this, AddSleepActivity.class);
         startActivity(i);
     }
 
     public void pageView(View v){
-        Intent i = new Intent(this,ViewSleepActivity.class);
+        Intent i = new Intent(this, ViewSleepActivity.class);
         startActivity(i);
     }
 }

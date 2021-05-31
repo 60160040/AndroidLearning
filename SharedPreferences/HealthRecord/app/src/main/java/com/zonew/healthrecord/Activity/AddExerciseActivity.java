@@ -1,4 +1,4 @@
-package com.zonew.healthrecord;
+package com.zonew.healthrecord.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.zonew.healthrecord.R;
+import com.zonew.healthrecord.SavedData;
 
 public class AddExerciseActivity extends AppCompatActivity {
 

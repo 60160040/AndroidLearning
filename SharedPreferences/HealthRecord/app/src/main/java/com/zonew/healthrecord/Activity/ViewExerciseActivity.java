@@ -1,10 +1,13 @@
-package com.zonew.healthrecord;
+package com.zonew.healthrecord.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.zonew.healthrecord.R;
+import com.zonew.healthrecord.SavedData;
 
 public class ViewExerciseActivity extends AppCompatActivity {
 

@@ -36,9 +36,4 @@ public class MainActivity extends AppCompatActivity {
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
-
-    public void pageLogin(View v) {
-        Intent i = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(i);
-    }
 }

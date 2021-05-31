@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewSleepActivity"></activity>
-        <activity android:name=".AddSleepActivity" />
-        <activity android:name=".SleepActivity" />
-        <activity android:name=".ViewExerciseActivity" />
-        <activity android:name=".AddExerciseActivity" />
-        <activity android:name=".ExerciseActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.ViewSleepActivity"></activity>
+        <activity android:name=".Activity.AddSleepActivity" />
+        <activity android:name=".Activity.SleepActivity" />
+        <activity android:name=".Activity.ViewExerciseActivity" />
+        <activity android:name=".Activity.AddExerciseActivity" />
+        <activity android:name=".Activity.ExerciseActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
