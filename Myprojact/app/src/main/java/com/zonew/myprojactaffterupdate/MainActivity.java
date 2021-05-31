@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
 
-    public void pageLogin(View view) {
+    public void pageLogin(View v) {
         Intent i = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(i);
     }
