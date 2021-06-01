@@ -30,22 +30,20 @@ public class ViewPersonActivity extends AppCompatActivity {
 
         // loop ดึงข้อความ
         while(c.moveToNext() == true){      // อ่านตัวถัดไป ถ้าไม่มีเป็น false
-            int colId            = c.getColumnIndex(DBStructure.Person.PERSON_ID)      ; // ID
+            int colId            = c.getColumnIndex(DBStructure.Person.PERSON_ID)      ; // column ID
             int personId         = c.getInt(colId)                                     ;
 
-            colId                = c.getColumnIndex(DBStructure.Person.PERSON_NAME)    ; // name
+            colId                = c.getColumnIndex(DBStructure.Person.PERSON_NAME)    ; // column name
             String personName    = c.getString(colId)                                  ;
 
-            colId                = c.getColumnIndex(DBStructure.Person.PERSON_EMAIL)   ; // E-mail
+            colId                = c.getColumnIndex(DBStructure.Person.PERSON_EMAIL)   ; // column E-mail
             String personEmail   = c.getString(colId)                                  ;
 
-            colId                = c.getColumnIndex(DBStructure.Person.PERSON_ADDRESS) ; // Address
+            colId                = c.getColumnIndex(DBStructure.Person.PERSON_ADDRESS) ; // column Address
             String personAddress = c.getString(colId)                                  ;
 
-            colId                = c.getColumnIndex(DBStructure.Person.PERSON_TELL)    ; // Tell
+            colId                = c.getColumnIndex(DBStructure.Person.PERSON_TELL)    ; // column Tell
             String personTell    = c.getString(colId)                                  ;
-
-
 
             // สร้างชุดข้อความเอาไว้แสดงผล
             str = str + "\n\nId: " + personId + "\nName: " + personName + "\nEmail: " + personEmail + "\nAddress: " + personAddress + "\nTell: " + personTell;

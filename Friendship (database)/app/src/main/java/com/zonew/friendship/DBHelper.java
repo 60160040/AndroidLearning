@@ -17,14 +17,13 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DROP_TABLE_PERSON = "drop table if exists "+ DBStructure.Person.TABLE_NAME;
 
     // คำสั่ง SQL
-    private static final String
-            CREATE_TABLE_PERSON = "create table " +
+    private static final String CREATE_TABLE_PERSON = "create table "    +
             DBStructure.Person.TABLE_NAME     + "("                      +
             DBStructure.Person.PERSON_ID      + " integer primary key, " +
             DBStructure.Person.PERSON_NAME    + " text, "                +
             DBStructure.Person.PERSON_EMAIL   + " text, "                +
             DBStructure.Person.PERSON_ADDRESS + " text, "                +
-            DBStructure.Person.PERSON_TELL    + " text);";
+            DBStructure.Person.PERSON_TELL    + " text);"                ;
     // มันคือประโยคนี้ "create table person(personId integer primary key, personName text, personEmail text, personAddress text, personTell text);"
 
     // Constructor สร้างเอง
