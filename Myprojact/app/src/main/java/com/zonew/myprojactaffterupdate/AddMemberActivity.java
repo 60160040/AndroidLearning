@@ -4,15 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.zonew.myprojactaffterupdate.ui.member.MemberFragment;
 
 public class AddMemberActivity extends AppCompatActivity {
     EditText etPhoneNumber,etName;
@@ -34,8 +29,8 @@ public class AddMemberActivity extends AppCompatActivity {
         strName        = etName.getText().toString()        ;
 
         // create Database
-        DBHelper dh = new DBHelper(getApplicationContext()) ;
-        SQLiteDatabase db = dh.getWritableDatabase()        ; // อยากเขียน DB ใช้อันนี้
+        SqliteDatabase dh = new SqliteDatabase(getApplicationContext()) ;
+        android.database.sqlite.SQLiteDatabase db = dh.getWritableDatabase()        ; // อยากเขียน DB ใช้อันนี้
 
         dh.addMember(strPhoneNumber,strName,db);
         dh.close();

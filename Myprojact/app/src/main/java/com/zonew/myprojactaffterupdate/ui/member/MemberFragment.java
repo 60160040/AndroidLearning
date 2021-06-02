@@ -1,8 +1,6 @@
 package com.zonew.myprojactaffterupdate.ui.member;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,13 +13,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.zonew.myprojactaffterupdate.AddMemberActivity;
-import com.zonew.myprojactaffterupdate.DBHelper;
-import com.zonew.myprojactaffterupdate.DBStructure;
 import com.zonew.myprojactaffterupdate.R;
+import com.zonew.myprojactaffterupdate.SqliteDatabase;
 import com.zonew.myprojactaffterupdate.databinding.FragmentMemberBinding;
 
 public class MemberFragment extends Fragment {
-
+    private SqliteDatabase mDatabase;
     private MemberViewModel memberViewModel;
     private FragmentMemberBinding binding;
 
@@ -37,8 +34,7 @@ public class MemberFragment extends Fragment {
 
         tvMember = root.findViewById(R.id.idTvMemberDisplay);
 
-        readData();
-
+        // default template
         /*final TextView textView = binding.textMember;
         memberViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -65,24 +61,4 @@ public class MemberFragment extends Fragment {
         binding = null;
     }
 
-    public void readData(){
-        DBHelper dbHelper = new DBHelper(getContext());
-        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-
-        Cursor cursor = dbHelper.readMember(sqLiteDatabase);
-        String str = "";
-
-        while(cursor.moveToNext() == true){
-            int colId                = cursor.getColumnIndex(DBStructure.Member.MEMBER_PHONENUMBER) ;
-            String memberPhoneNumber = cursor.getString(colId)                                      ;
-
-            colId                    = cursor.getColumnIndex(DBStructure.Member.MEMBER_NAME)        ;
-            String memberName        = cursor.getString(colId)                                      ;
-
-            str = str + "Id: " + memberPhoneNumber + "\nName: " + memberName + "\n\n";
-        }
-        tvMember.setText(str);
-        dbHelper.close();
-        // Test
-    }
 }
