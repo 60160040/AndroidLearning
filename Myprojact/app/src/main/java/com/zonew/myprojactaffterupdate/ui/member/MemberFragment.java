@@ -45,7 +45,6 @@ public class MemberFragment extends Fragment {
         ArrayList<Members> allMembers = mDatabase.listMembers();
         if (allMembers.size() > 0) {
             memberView.setVisibility(View.VISIBLE);
-
         }
 
         FloatingActionButton b = binding.floatingActionButton2;
@@ -56,7 +55,7 @@ public class MemberFragment extends Fragment {
                 startActivity(i);
             }
         });
-//
+
         return root;
     }
 

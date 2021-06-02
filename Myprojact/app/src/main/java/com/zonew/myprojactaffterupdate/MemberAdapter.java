@@ -58,14 +58,6 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberViewHolder> implem
         });
     }
 
-    private void editTaskDialog(Members members) {
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
     @Override
     public Filter getFilter() {
         return new Filter() {
@@ -90,8 +82,20 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberViewHolder> implem
 
             @Override
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-
+                listMembers = (ArrayList<Members>) filterResults.values;
+                notifyDataSetChanged();
+                /////////////////
             }
-        }
+        };
     }
+
+    @Override
+    public int getItemCount() {
+        return listMembers.size();
+    }
+
+    private void editTaskDialog(Members members) {
+
+    }
+
 }
