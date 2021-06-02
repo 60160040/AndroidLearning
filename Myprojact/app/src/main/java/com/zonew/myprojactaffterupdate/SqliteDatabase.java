@@ -14,9 +14,9 @@ import java.util.ArrayList;
 
 public class SqliteDatabase extends SQLiteOpenHelper {
     Context ct;
-    public static final String DATABASE_NAME = "MemberDB" ;
-    public static final int DATABASE_VERSION = 3          ;
-    private static final String TABLE_NAME       = DBStructure.Member.TABLE_NAME ;
+    public static final String DATABASE_NAME = "MemberDB";
+    public static final int DATABASE_VERSION = 1;
+    private static final String TABLE_NAME = DBStructure.Member.TABLE_NAME;
     private static final String COLUMN_ID        = DBStructure.Member.COLUMN_ID  ;
     private static final String COLUMN_NAME      = DBStructure.Member.COLUMN_NAME;
     private static final String COLUMN_NO        = DBStructure.Member.COLUMN_NO  ;
@@ -46,22 +46,22 @@ public class SqliteDatabase extends SQLiteOpenHelper {
     }
 
     // ของอาจารย์ คือ สร้างใส่ page.java เลย
-    ArrayList<Member> listContacts() {
-        String sql                                = "select * from " + TABLE_NAME           ;
-        android.database.sqlite.SQLiteDatabase db = this.getReadableDatabase()       ;
-        ArrayList<Member> storeContacts           = new ArrayList<>();
-        Cursor cursor                             = db.rawQuery(sql, null)    ; // readDatabase
+    public ArrayList<Members> listMembers() {
+        String sql = "select * from " + TABLE_NAME;
+        android.database.sqlite.SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<Members> storeMembers = new ArrayList<>();
+        Cursor cursor = db.rawQuery(sql, null); // readDatabase
         if (cursor.moveToFirst()) {
             do {
                 int id = Integer.parseInt(cursor.getString(0));
                 String name = cursor.getString(1);
                 String phno = cursor.getString(2);
-                storeContacts.add(new Member(id, name, phno));
+                storeMembers.add(new Members(id, name, phno));
             }
             while (cursor.moveToNext());
         }
         cursor.close();
-        return storeContacts;
+        return storeMembers;
     }
 
     // create TABLE
@@ -80,26 +80,26 @@ public class SqliteDatabase extends SQLiteOpenHelper {
     }
 
     // add member
-    public void addMember(Member member){
-        ContentValues values = new ContentValues()    ; // เอาไว้ใส่ข้อมูล
-        values.put(COLUMN_NAME,member.getName())      ; // name
-        values.put(COLUMN_NO,member.getPhno())        ; // phone number
+    public void addMember(Members member) {
+        ContentValues values = new ContentValues(); // เอาไว้ใส่ข้อมูล
+        values.put(COLUMN_NAME, member.getName()); // name
+        values.put(COLUMN_NO, member.getPhno()); // phone number
         SQLiteDatabase db = this.getWritableDatabase();
-        db.insert(TABLE_NAME,null,values); // put data into DB
+        db.insert(TABLE_NAME, null, values); // put data into DB
 
-        Log.d("Test Database","One row of member added ... ");
-        Toast.makeText(ct,"Member record added ... ",Toast.LENGTH_SHORT).show();
+        Log.d("Test Database", "One row of member added ... ");
+        Toast.makeText(ct, "Member record added ... ", Toast.LENGTH_SHORT).show();
     }
 
     // Update Data
-    public void updateMember(Member member){
+    public void updateMember(Members member) {
         // สร้างก้อนข็อมูล
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, member.getName());
         values.put(COLUMN_NO, member.getPhno());
         SQLiteDatabase db = this.getWritableDatabase();
         db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(member.getId())});
-        Toast.makeText(ct,"Updated Success",Toast.LENGTH_SHORT).show();
+        Toast.makeText(ct, "Updated Success", Toast.LENGTH_SHORT).show();
     }
 
     public void deleteMember(int id){

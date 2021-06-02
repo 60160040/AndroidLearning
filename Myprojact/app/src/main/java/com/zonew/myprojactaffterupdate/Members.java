@@ -1,16 +1,16 @@
 package com.zonew.myprojactaffterupdate;
 
-public class Member {
+public class Members {
     private int id;
     private String name;
     private String phoneNumber;
 
-    Member(String name, String phno) {
+    Members(String name, String phno) {
         this.name = name;
         this.phoneNumber = phno;
     }
 
-    Member(int id, String name, String phno) {
+    Members(int id, String name, String phno) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phno;

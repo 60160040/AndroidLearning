@@ -10,12 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.zonew.myprojactaffterupdate.AddMemberActivity;
+import com.zonew.myprojactaffterupdate.Members;
 import com.zonew.myprojactaffterupdate.R;
 import com.zonew.myprojactaffterupdate.SqliteDatabase;
 import com.zonew.myprojactaffterupdate.databinding.FragmentMemberBinding;
+
+import java.util.ArrayList;
 
 public class MemberFragment extends Fragment {
     private SqliteDatabase mDatabase;
@@ -32,16 +37,16 @@ public class MemberFragment extends Fragment {
         binding = FragmentMemberBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        tvMember = root.findViewById(R.id.idTvMemberDisplay);
+        RecyclerView memberView = root.findViewById(R.id.myMemberList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        memberView.setLayoutManager(linearLayoutManager);
+        memberView.setHasFixedSize(true);
+        mDatabase = new SqliteDatabase(getContext());
+        ArrayList<Members> allMembers = mDatabase.listMembers();
+        if (allMembers.size() > 0) {
+            memberView.setVisibility(View.VISIBLE);
 
-        // default template
-        /*final TextView textView = binding.textMember;
-        memberViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
+        }
 
         FloatingActionButton b = binding.floatingActionButton2;
         b.setOnClickListener(new View.OnClickListener() {

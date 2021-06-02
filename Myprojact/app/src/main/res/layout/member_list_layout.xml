@@ -12,34 +12,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/contactName"
+                android:id="@+id/memberName"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:textSize="24dp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/phoneNum"
-                android:layout_below="@+id/contactName"
+                android:layout_below="@+id/memberName"
                 android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
                 android:textStyle="bold" />
         </RelativeLayout>
-<!--        <ImageView-->
-<!--            android:id="@+id/editContact"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_edit"-->
-<!--            android:contentDescription="TODO" />-->
-<!--        <ImageView-->
-<!--            android:id="@+id/deleteContact"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_weight="1"-->
-<!--            android:src="@drawable/ic_remove"-->
-<!--            android:contentDescription="TODO" />-->
+
+        <ImageView
+            android:id="@+id/editMember"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_edit" />
+
+        <ImageView
+            android:id="@+id/deleteMember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_remove"
+            android:contentDescription="TODO" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
