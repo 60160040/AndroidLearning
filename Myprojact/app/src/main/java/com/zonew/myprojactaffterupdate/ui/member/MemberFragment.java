@@ -56,7 +56,7 @@ public class MemberFragment extends Fragment {
                 startActivity(i);
             }
         });
-
+//
         return root;
     }
 
