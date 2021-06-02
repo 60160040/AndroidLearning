@@ -36,7 +36,7 @@ public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnC
         Intent i     = new Intent(ct,DisplayActivity.class) ;
         int    id    = getBindingAdapterPosition()          ;
         int resId = ims[id]                                 ;
-        i.putExtra("IMAGE_RES_ID",resId)             ;
+        i.putExtra("IMAGE_RES_ID",resId)              ;
 
         Toast.makeText(ct,"Image : "+ id,Toast.LENGTH_SHORT).show(); // พารามิเตอร์แรกต้องเป็นหน้า Activity (ui)
         ct.startActivity(i)                                 ;

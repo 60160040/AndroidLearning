@@ -83,5 +83,6 @@ public class MemberFragment extends Fragment {
         }
         tvMember.setText(str);
         dbHelper.close();
+        // Test
     }
 }

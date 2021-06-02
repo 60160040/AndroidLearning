@@ -48,7 +48,5 @@ public class AddMemberActivity extends AppCompatActivity {
         ft.attach(frg);
         ft.commit();
 
-
-
     }
 }

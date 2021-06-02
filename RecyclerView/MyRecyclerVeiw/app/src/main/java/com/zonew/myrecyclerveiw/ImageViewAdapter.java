@@ -20,8 +20,7 @@ public class ImageViewAdapter  extends  RecyclerView.Adapter<ImageViewHolder>{
     @NonNull
     @Override
     public ImageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater li;
-        li = LayoutInflater.from(parent.getContext());
+        LayoutInflater li = LayoutInflater.from(parent.getContext());
         View v = li.inflate(R.layout.word_item_layout,parent,false);
         ImageViewHolder ivh = new ImageViewHolder(parent.getContext(),v,imgs);
         return ivh;

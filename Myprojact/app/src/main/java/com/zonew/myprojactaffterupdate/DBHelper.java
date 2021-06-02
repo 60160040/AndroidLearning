@@ -81,7 +81,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // condition
         String str = DBStructure.Member.MEMBER_PHONENUMBER + "=" + phoneNumber;
 
-        sqLiteDatabase.update(DBStructure.Member.TABLE_NAME,cv,str,null);  // where case เงื่อนไข cv คือก้อนข้อมูล
+        sqLiteDatabase.update(DBStructure.Member.TABLE_NAME,cv,str,null);  // where case เงื่อนไข, cv คือก้อนข้อมูล,
         Toast.makeText(ct,"Updated Success",Toast.LENGTH_SHORT).show();
     }
 
