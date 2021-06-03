@@ -1,0 +1,2 @@
+rootProject.name = "Animations Using Lottie"
+include ':app'
