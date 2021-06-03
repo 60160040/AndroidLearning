@@ -1,6 +1,5 @@
 package com.zonew.myprojactaffterupdate;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,6 @@ import android.widget.Filter;
 import android.widget.Filterable;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -46,7 +43,7 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberViewHolder> implem
         holder.editMember.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editTaskDialog(members);
+                editTaskLayout(members);
             }
         });
         holder.deleteMember.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +81,6 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberViewHolder> implem
             protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
                 listMembers = (ArrayList<Members>) filterResults.values;
                 notifyDataSetChanged();
-                /////////////////
             }
         };
     }
@@ -94,8 +90,9 @@ public class MemberAdapter extends RecyclerView.Adapter<MemberViewHolder> implem
         return listMembers.size();
     }
 
-    private void editTaskDialog(Members members) {
-
+    private void editTaskLayout(final Members members) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View subView = inflater.inflate(R.layout.)
     }
 
 }

@@ -23,12 +23,12 @@ public class SqliteDatabase extends SQLiteOpenHelper {
 
     /*__________________________command SQL__________________________*/
     // Create
-    private static final String CREATE_TABLE_MEMBER = "create table "      +
-            TABLE_NAME  + "("                      +
-            COLUMN_ID   + " integer primary key, " +
-            COLUMN_NAME + " text,"                 +
-            COLUMN_NO   + " text"                  +
-                          ");"                     ;
+    private static final String CREATE_TABLE_MEMBER = "create table "
+            + TABLE_NAME  + "("
+            + COLUMN_ID   + " integer primary key, "
+            + COLUMN_NAME + " text,"
+            + COLUMN_NO   + " text"
+            + ");" ;
     // Delete
     public static final String DROP_TABLE_MEMBER = "drop table if exists " +
             TABLE_NAME                                                     ;
