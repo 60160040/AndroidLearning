@@ -9,11 +9,16 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.zonew.myprojactaffterupdate.ui.member.MemberFragment;
 
 import java.util.ArrayList;
 
 public class SqliteDatabase extends SQLiteOpenHelper {
     Context ct;
+    Fragment fct;
     public static final String DATABASE_NAME = "MemberDB";
     public static final int DATABASE_VERSION = 1;
     private static final String TABLE_NAME = DBStructure.Member.TABLE_NAME;
@@ -80,7 +85,7 @@ public class SqliteDatabase extends SQLiteOpenHelper {
     }
 
     // add member
-    public void addMember(Members member) {
+    public void addMembers(Members member) {
         ContentValues values = new ContentValues(); // เอาไว้ใส่ข้อมูล
         values.put(COLUMN_NAME, member.getName()); // name
         values.put(COLUMN_NO, member.getPhno()); // phone number
@@ -88,18 +93,18 @@ public class SqliteDatabase extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values); // put data into DB
 
         Log.d("Test Database", "One row of member added ... ");
-        Toast.makeText(ct, "Member record added ... ", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ct.getActivity(), "Member record added ... ", Toast.LENGTH_SHORT).show();
     }
 
     // Update Data
-    public void updateMember(Members member) {
+    public void updateMembers(Members member) {
         // สร้างก้อนข็อมูล
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, member.getName());
         values.put(COLUMN_NO, member.getPhno());
         SQLiteDatabase db = this.getWritableDatabase();
         db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(member.getId())});
-        Toast.makeText(ct, "Updated Success", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ct.getActivity(), "Updated Success", Toast.LENGTH_SHORT).show();
     }
 
     public void deleteMember(int id){
@@ -108,6 +113,6 @@ public class SqliteDatabase extends SQLiteOpenHelper {
 //        String condition = COLUMN_NO + " = ?" ;
 //        db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
 
-        Toast.makeText(ct,"Data is deleted.",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ct,"Data is deleted.",Toast.LENGTH_SHORT).show();
     }
 }

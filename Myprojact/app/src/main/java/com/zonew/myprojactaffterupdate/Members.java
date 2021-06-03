@@ -5,7 +5,7 @@ public class Members {
     private String name;
     private String phoneNumber;
 
-    Members(String name, String phno) {
+    public Members(String name, String phno) {
         this.name = name;
         this.phoneNumber = phno;
     }
