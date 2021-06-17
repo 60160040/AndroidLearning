@@ -5,15 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+
+
+    <!--Step 2-->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieCheckedDone"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:lottie_rawRes="@raw/checked_done"/>
 
+    <!--Step 3-->
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieSwitchButton"
         android:layout_width="100dp"
@@ -22,13 +26,14 @@
         android:layout_marginEnd="10dp"
         app:lottie_rawRes="@raw/button_switch"/>
 
+    <!--Step 1-->
+
     <!--<com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/delivery_man" />
-
+        app:lottie_rawRes="@raw/bus" />
 
     <TextView
         android:layout_width="match_parent"
@@ -52,6 +57,6 @@
         android:text="@string/about"
         android:textColor="#757575"
         android:textSize="14sp"
-        android:textStyle="italic" />-->
-
+        android:textStyle="italic" />
+-->
 </LinearLayout>
