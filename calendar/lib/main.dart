@@ -113,7 +113,11 @@ class _MyHomePageState extends State<MyHomePage> {
         onDaySelected: (selectedDay, focusedDay) {
           setState(() {
             _selectedDay = selectedDay;
-            _focusedDay = focusedDay; // update `_focusedDay` here as well
+            _focusedDay = focusedDay;
+            _suggestions.clear();
+            _buildSuggestions();
+            print("onDaySelected $_suggestions");
+
           });
         },
           /*_suggestions.clear();
@@ -142,12 +146,12 @@ class _MyHomePageState extends State<MyHomePage> {
       itemBuilder: /*1*/ (context, i) {
         if (i.isOdd) return const Divider();
         /*2*/
-
         final index = i ~/ 2; /*3*/
-        var addList= _selectedDay;
+        var addList = _selectedDay;
         if (index >= _suggestions.length) {
-          addList = DateTime.now().add(Duration(days: index));
+          addList = addList.add(Duration(days: index));
           _suggestions.add(addList); /*4*/
+          print("addList $addList");
         }
         DateTime dateIndex = _suggestions[index];
         return _buildRow(dateIndex);
@@ -166,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         onTap: () {
-          print(date);
+          print("onTap $date");
           setState(() {
             _focusedDay = date;
             _selectedDay = date;
