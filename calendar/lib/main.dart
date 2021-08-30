@@ -35,33 +35,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   DateTime _selectedDay = DateTime.now();
 
-  //TODO : infinite scroll
-  //final dateNow = DateFormat('yyyy-MM-dd').format(DateTime.now());
   final _suggestions = <DateTime>[];
 
-  // final _biggerFont = TextStyle(fontSize: 18.0);
 
   //TODO : Bind calendar with list view
 
   @override
   void initState() {
     super.initState();
-    /*controller = RCalendarController.multiple(selectedDates: [
-      DateTime(2019, 12, 1),
-      DateTime(2019, 12, 2),
-      DateTime(2019, 12, 3),
-    ]);*/
-    /*controller = RCalendarController.single(
-      selectedDate: DateTime.now().toUtc(),
-      isAutoSelect: true,
-    );*/
-    /*controller =  RCalendarController.single(
-        initialData: [
-          DateTime.now(),
-          DateTime.now().add(Duration(days: 1)),
-          DateTime.now().add(Duration(days: 2)),
-        ]
-    );*/
   }
 
   @override
@@ -139,8 +120,10 @@ class _MyHomePageState extends State<MyHomePage> {
           _suggestions.add(addList); /*4*/
           print("$i addList $addList");
         }
-        if(addList.day == 5){
-          // changeMonth(addList);
+        if(addList.day == 6){
+          Future.delayed(Duration.zero, () async { // setState() during build
+            changeMonth(addList);
+          });
         }
         DateTime dateIndex = _suggestions[index];
         return _buildRow(dateIndex);
@@ -162,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
           print("onTap $date");
           setState(() {
             _focusedDay = date;
-            _selectedDay = date;
+            // _selectedDay = date;
           });
         },
       ),
@@ -171,6 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void changeMonth(DateTime date){
     print("---------ChangMonthStart---------");
+    print(date.day);
     try{
       setState(() {
         _focusedDay = date;
