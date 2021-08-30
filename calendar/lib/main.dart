@@ -120,23 +120,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
           });
         },
-          /*_suggestions.clear();
-          _suggestions.add(_selectedDay);*//*
-        },*/
-        /*calendarStyle: CalendarStyle(
-          isTodayHighlighted: true,
-          selectedDecoration:
-              BoxDecoration(color: Colors.cyan, shape: BoxShape.circle),
-          selectedTextStyle: TextStyle(
-            color: Colors.white,
-          ),
-        ),*/
-        /*onPageChanged: (focusedDay) {
-          _focusedDay = focusedDay;
-        },*/
-
-        /*selectedDayPredicate: (day) =>isSameDay(day, selectedDay),*/
-        // currentDay: date,
       ),
     );
   }
@@ -144,14 +127,20 @@ class _MyHomePageState extends State<MyHomePage> {
   ListView _buildSuggestions() {
     return ListView.builder(
       itemBuilder: /*1*/ (context, i) {
-        if (i.isOdd) return const Divider();
+        if (i.isOdd) {
+          print("$i Divider()");
+          return const Divider();
+        }
         /*2*/
         final index = i ~/ 2; /*3*/
         var addList = _selectedDay;
         if (index >= _suggestions.length) {
           addList = addList.add(Duration(days: index));
           _suggestions.add(addList); /*4*/
-          print("addList $addList");
+          print("$i addList $addList");
+        }
+        if(addList.day == 5){
+          // changeMonth(addList);
         }
         DateTime dateIndex = _suggestions[index];
         return _buildRow(dateIndex);
@@ -179,4 +168,17 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+
+  void changeMonth(DateTime date){
+    print("---------ChangMonthStart---------");
+    try{
+      setState(() {
+        _focusedDay = date;
+      });
+    }catch(e){
+      print(e);
+    }
+    print("---------ChangMonthEnd---------");
+  }
+
 }
