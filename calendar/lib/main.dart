@@ -120,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _suggestions.add(addList); /*4*/
           print("$i addList $addList");
         }
-        if(addList.day == 6){
+        if(addList.day == 9 && addList.month > _focusedDay.month){
           Future.delayed(Duration.zero, () async { // setState() during build
             changeMonth(addList);
           });
